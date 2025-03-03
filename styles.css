@@ -1,2 +1,14 @@
 .gallery-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.gallery-item {
+  list-style-type: none;
+}
+.img-item {
+  width: calc((100%-20px) / 3);
+}
+a {
 }
