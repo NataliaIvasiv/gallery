@@ -1,3 +1,4 @@
+import SimpleLightbox from 'simplelightbox';
 const images = [
   {
     preview:
@@ -81,12 +82,5 @@ gallery.addEventListener('click', event => {
   console.log(liData);
   const currentImage = images.find(image => image.original == liData);
   console.log(currentImage);
-
-  basicLightbox
-    .create(
-      `
-		<img width="1400" height="900" src="${currentImage.original}">
-	`
-    )
-    .show();
+  let galleryImg = new SimpleLightbox('.gallery a');
 });
