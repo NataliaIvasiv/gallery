@@ -76,5 +76,17 @@ gallery.insertAdjacentHTML('beforeend', markup);
 
 gallery.addEventListener('click', event => {
   event.preventDefault();
-  console.log(event.target);
+  if (event.target === event.currentTarget) return;
+  const liData = event.target.dataset.source;
+  console.log(liData);
+  const currentImage = images.find(image => image.original == liData);
+  console.log(currentImage);
+
+  basicLightbox
+    .create(
+      `
+		<img width="1400" height="900" src="${currentImage.original}">
+	`
+    )
+    .show();
 });
