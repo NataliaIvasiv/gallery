@@ -1,4 +1,5 @@
-import SimpleLightbox from 'simplelightbox';
+import SimpleLightbox from './node_modules/simplelightbox/dist/simple-lightbox.js';
+
 const images = [
   {
     preview:
@@ -83,4 +84,5 @@ gallery.addEventListener('click', event => {
   const currentImage = images.find(image => image.original == liData);
   console.log(currentImage);
   let galleryImg = new SimpleLightbox('.gallery a');
+  galleryImg.on('show.simplelightbox');
 });
